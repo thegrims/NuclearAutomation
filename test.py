@@ -7,12 +7,15 @@
 import sys
 #Command Interface DLL can be found here.
 print("Adding location of Newport.ESP301.CommandInterface.dll to sys.path")
-sys.path.append(r' C:\Program Files (x86)\Newport\MotionControl\ESP301\Bin')
+sys.path.append(r'C:\Newport\Motion Control\ESP301\Bin')
 # The CLR module provide functions for interacting with the underlying
 # .NET runtime
 import clr
-# Add reference to assembly and import names from namespace
-clr.AddReferenceToFile("Newport.ESP301.CommandInterface.dll")
+# Add reference to assembly and import names from namespace 
+# ToFile
+clr.FindAssembly(r"Newport.ESP301.CommandInterface.dll")
+clr.AddReference(r"Newport.ESP301.CommandInterface.dll")
+
 from CommandInterface import *
 import System
 #=====================================================================
